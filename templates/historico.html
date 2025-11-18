@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Histórico de Registros</title>
+
+    <style>
+        body {
+            font-family: 'Inter', Arial, sans-serif;
+            background: #eef2ee;
+            padding: 40px;
+            margin: 0;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2a5d2f;
+            font-size: 32px;
+            margin-bottom: 30px;
+        }
+
+        .card {
+            max-width: 900px;
+            margin: auto;
+            background: white;
+            padding: 30px 40px;
+            border-radius: 20px;
+            box-shadow: 0 12px 35px rgba(0,0,0,0.10);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            border-radius: 15px;
+            overflow: hidden;
+            margin-top: 15px;
+        }
+
+        thead {
+            background: #2a8f44;
+            color: white;
+        }
+
+        th, td {
+            padding: 14px;
+            text-align: left;
+        }
+
+        tr:nth-child(even) { background: #f7faf7; }
+        tr:hover { background: #e8f5e9; transition: .2s; }
+
+        .voltar {
+            display: inline-block;
+            margin-top: 25px;
+            background: #2a8f44;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 12px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .voltar:hover {
+            background: #23773a;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>Histórico de Registros</h1>
+
+<div class="card">
+
+    <table>
+        <thead>
+        <tr>
+            <th>Data</th>
+            <th>Humor</th>
+            <th>Anotações</th>
+            <th>Nome</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        {% for registro in registros %}
+        <tr>
+            <td>{{ registro.data }}</td>
+            <td>{{ registro.humor }}</td>
+            <td>{{ registro.anotacoes }}</td>
+            <td>{{ registro.nome }}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a class="voltar" href="/">Voltar</a>
+
+</div>
+
+</body>
+</html>

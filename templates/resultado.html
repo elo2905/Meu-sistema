@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"
+         <title> 
+            Diario de Saúde 
+        </title>
+        <link rel="stylesheet" href="{{ url_for('static',filename='stylee.css') }}">
+    </head>
+    <body>
+        <div class="container">
+        <h1> Seu Diario de Saúde</h1>
+        <p class="success"> Registro salvo com sucesso</p>
+        <div class="card"> 
+        <p><strong>Nome:</strong>{{ nome }} </p>
+        <p><strong>Data de Nascimento:</strong>{{ nascimento }}</p>
+        <p><strong>E-mail:</strong>{{ email }}</p>
+        <p><strong>Sexo:</strong>{{ sexo }}</p>
+        <p><strong>Humor:</strong>{{ humor }} </p>
+        <p><strong>Anotações:</strong>{{ anotacoes if anotacoes else "Nenhuma anotação" }}</p>
+        <p><strong> Data:</strong>{{ data }} </p>
+        </div>
+        <div class="links"> 
+        <a href="/">Novo registro</a>
+        
+        <a href="/historico">Ver histórico</a>
+        </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title> 
+            Diario de Saúde
+        </title>
+        <link rel="stylesheet" href="{{ url_for('static',filename='style.css') }}">
+    </head>
+<body> 
+    <div class="container">
+    <h1> Diario de Saúde </h1>
+    <form action="/resultado" method="POST">
+        <label>Nome:</label>
+        <input type="text" name="nome" required><br><br>
+        <label for "data">Data de Nascimento:</label>
+        <input type="date" id="data" name="nascimento" required><br><br>
+        <label>E-mail:</label>
+        <input type="text" name="email" required><br><br>
+        <label>Sexo:</label>
+        <select name="sexo">
+            <option value="Feminino"> Feminino</option>
+            <option value="Masculino"> Masculino</option>
+        </select><br><br>
+        <label> Como você está se sentindo hoje?</label>
+        <select name="humor">
+            <option value="Feliz">Feliz</option>
+            <option value="Alegre">Alegre</option>
+            <option value="Animado">Animado</option>
+            <option value="Ansioso">Ansioso</option>
+            <option value="Triste">Triste</option>
+            <option value="Tranquilo">Tranquilo</option>
+            <option value="Cansado">Cansado</option>
+            <option value="Desanimado">Desanimado</option>
+        </select><br><br>
+        <label> Anotações:</label><br>
+        <textarea name="anotacoes" rows="4" cols="30"></textarea><br><br>
+        <label for "data">Data:</label>
+        <input type="date" id="data" name="data">
+        <button type="submit"> Salvar</button>
+    </form>
+    </div>
+</body>
+</html>
